@@ -13,6 +13,7 @@ public class JumpPad : MonoBehaviour
     {
         if(collider.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Collided with player!");
             collider.GetComponent<PlayerController>().RB.AddForce(Vector3.up * (jumpForce * jumpForceMod), ForceMode.Force);
         }
     }
