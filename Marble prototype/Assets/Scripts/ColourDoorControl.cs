@@ -20,7 +20,7 @@ public class ColourDoorControl : MonoBehaviour
             {
                 Debug.Log("Correct");
                 leftDoor.transform.position = leftDoor.transform.position + doorMovement;
-                rightDoor.transform.position = rightDoor.transform.position + doorMovement;
+                rightDoor.transform.position = rightDoor.transform.position - doorMovement;
             }
         }
     }
