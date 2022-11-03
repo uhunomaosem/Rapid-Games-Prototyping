@@ -78,8 +78,11 @@ public class PlayerController : MonoBehaviour
     public void addScore(int scoreToAdd)
     {
         Score += scoreToAdd;
-
+        if (getPlanarVelocityDirection() == restartPoint)
+            Score = 0;
         UIManager.Instance.updateScore(id, Score);
+
+ 
     }
 
     // Update is called once per frame

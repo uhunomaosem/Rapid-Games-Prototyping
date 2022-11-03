@@ -16,6 +16,7 @@ public class KillVolume : MonoBehaviour
             playerController.RB.angularVelocity = Vector3.zero;
 
             LevelManager.Instance.setPlayerPosition(playerController);
+            
         }
     }
 }
