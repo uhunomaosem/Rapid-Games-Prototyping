@@ -6,6 +6,7 @@ public class KillVolume : MonoBehaviour
 {    
     protected const string playerTag = "Player";
 
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == playerTag)
@@ -14,9 +15,13 @@ public class KillVolume : MonoBehaviour
 
             playerController.RB.velocity = Vector3.zero;
             playerController.RB.angularVelocity = Vector3.zero;
-
+            playerController.Score = 0;
             LevelManager.Instance.setPlayerPosition(playerController);
             
         }
+
+        
     }
+
+
 }

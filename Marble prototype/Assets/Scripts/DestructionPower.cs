@@ -8,13 +8,16 @@ public class DestructionPower : MonoBehaviour
     {
         Destroy(this, 10);
     }
-    
+
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Destructibles")
+        if (collision.collider.tag == "Destructible")
         {
+            PlayerController playerController = GetComponent<PlayerController>();
+            playerController.Score = playerController.Score + 1000;
             Destroy(collision.gameObject);
         }
     }
+
 }

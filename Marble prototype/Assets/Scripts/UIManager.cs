@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     Transform mainMenuUI, levelUI, completedUI, gameOverUI;
 
     Text time;
-    Text scoreP1, scoreP2;
+    Text scoreP1;
 
     // Start is called before the first frame update
     void Awake()
@@ -41,7 +41,6 @@ public class UIManager : MonoBehaviour
         time = levelUI.Find("Timer").GetComponent<Text>();
 
         scoreP1 = levelUI.Find("ScoreP1").GetComponent<Text>();
-        scoreP2 = levelUI.Find("ScoreP2").GetComponent<Text>();
 
         LevelTimer.Instance.ticked.AddListener(OnLevelTimerTicked);
     }
@@ -101,10 +100,6 @@ public class UIManager : MonoBehaviour
         {
             case 0:
                 scoreP1.text = score.ToString();
-                break;
-
-            case 1:
-                scoreP2.text = score.ToString();
                 break;
         }
     }
