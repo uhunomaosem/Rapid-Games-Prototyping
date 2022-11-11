@@ -9,8 +9,8 @@ public class ColourDoorControl : MonoBehaviour
     public GameObject rightDoor;
     public Vector3 doorMovement;
 
-    // Start is called before the first frame update
-    private void OnTriggerEnter(Collider other)
+
+    private void OnTriggerExit(Collider other)
     { 
         if (other.tag == "Player")
         {
@@ -24,4 +24,6 @@ public class ColourDoorControl : MonoBehaviour
             }
         }
     }
+
+
 }
