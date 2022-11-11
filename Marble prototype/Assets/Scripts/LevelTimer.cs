@@ -65,8 +65,6 @@ public class LevelTimer : MonoBehaviour, ITimer
         StopCoroutine(tick());
 
         stopped.Invoke();
-
-        GameManager.Instance.endGame(false);
     }
 
     public void reset()

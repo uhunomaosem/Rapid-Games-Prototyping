@@ -101,6 +101,7 @@ public class UIManager : MonoBehaviour
             case 0:
                 scoreP1.text = score.ToString();
                 break;
+
         }
     }
 
