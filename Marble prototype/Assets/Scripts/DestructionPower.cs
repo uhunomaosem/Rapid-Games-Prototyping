@@ -6,7 +6,7 @@ public class DestructionPower : MonoBehaviour
 {
     void Start()
     {
-        Destroy(this, 10);
+        Destroy(this, 30);
     }
 
 
