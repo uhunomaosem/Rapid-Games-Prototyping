@@ -34,7 +34,7 @@ public class PushScript : MonoBehaviour
         if (collider.gameObject.CompareTag("Player"))
         {
             Debug.Log("PLAYER GOOOOO");
-            collider.GetComponent<PlayerController>().RB.AddForce(Vector3.back * (pushForce * pushforceMod), ForceMode.Force);
+            collider.GetComponent<PlayerController>().RB.AddForce(Vector3.right * (pushForce * pushforceMod), ForceMode.Force);
         }
     }
 }
