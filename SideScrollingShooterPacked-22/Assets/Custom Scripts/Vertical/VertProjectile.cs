@@ -19,8 +19,8 @@ public class VertProjectile : MonoBehaviour
 	{
 		if (other.tag == "Enemy")
 		{
-			Destroy(other.gameObject);
-			Destroy(gameObject);
+			GetComponent<HealthComponent>().TakeDamage(20);
+
 		}
 	}
 }
