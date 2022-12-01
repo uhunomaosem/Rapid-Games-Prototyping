@@ -66,7 +66,7 @@ public class VerticalPlayerController : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D other)
 	{
 
-		GetComponent<HealthComponent>().TakeDamage(90);
+		GetComponent<HealthComponent>().TakeDamage(20);
 	}
 
 
