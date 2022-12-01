@@ -62,4 +62,13 @@ public class VerticalPlayerController : MonoBehaviour
 			myRigidbody.velocity = Vector2.ClampMagnitude(myRigidbody.velocity, maxSpeed);
 		}
 	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+
+		GetComponent<HealthComponent>().TakeDamage(90);
+	}
+
+
+
 }
