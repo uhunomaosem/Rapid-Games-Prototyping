@@ -41,7 +41,8 @@ public class BackgroundManager : MonoBehaviour
     {
         EnemySpawner spawner = Instantiate(enemySpawner, children[children.Count - 1].transform.position, children[children.Count - 1].transform.rotation);
         spawner.countToSpawn = Random.Range(1, 10);
-        spawner.
+        spawner.spawnRate = Random.Range(0.3f, 1.5f);
+        spawner.enemyToSpawn = enemyToSpawn;
     }
 
 

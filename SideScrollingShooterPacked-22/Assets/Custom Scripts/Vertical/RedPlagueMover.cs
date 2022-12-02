@@ -30,7 +30,10 @@ public class RedPlagueMover : MonoBehaviour
 		//    getcomponent<healthcomponent>().takedamage(20);
 		//}
 		GetComponent<HealthComponent>().TakeDamage(20);
-
+		if (GetComponent<HealthComponent>().health <= 0)
+		{
+			ScoreSystem.Instance.AddScore(10);
+		}
 
 	}
 
