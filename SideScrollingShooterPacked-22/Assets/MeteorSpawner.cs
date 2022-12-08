@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class EnemySpawner : MonoBehaviour
+public class MeteorSpawner : MonoBehaviour
 {
-
     public GameObject enemyToSpawn;
     public float spawnRate;
     public int countToSpawn;
@@ -20,13 +18,12 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if(time > spawnRate)
+        if (time > spawnRate)
         {
             GameObject enemy = Instantiate(enemyToSpawn, transform.position, transform.rotation);
             transform.Rotate(Vector3.right * -180);
-            enemy.GetComponent<RedPlagueMover>().vSpeed = Random.Range(0.1f,2f);
-            enemy.GetComponent<RedPlagueMover>().maxXOffset = Random.Range(-8f, 8f);
-            
+            enemy.GetComponent<MeteorMove>().maxXOffset = Random.Range(-8f, 8f);
+
 
             time = 0;
             spawned++;
@@ -35,10 +32,5 @@ public class EnemySpawner : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
-
     }
-
-
-
 }

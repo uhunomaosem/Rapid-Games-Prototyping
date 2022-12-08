@@ -19,8 +19,8 @@ public class VertProjectile : MonoBehaviour
 	{
 		if (other.tag == "Enemy")
 		{
+			Debug.Log("ENEMY TAKEN DAMAGE");
 			GetComponent<HealthComponent>().TakeDamage(20);
-
 		}
 	}
 }

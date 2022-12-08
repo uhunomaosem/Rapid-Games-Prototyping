@@ -65,8 +65,16 @@ public class VerticalPlayerController : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		if (other.tag == "Enemy")
+        {
+			GetComponent<HealthComponent>().TakeDamage(20);
+		}
 
-		GetComponent<HealthComponent>().TakeDamage(20);
+		if (other.tag == "Obstacle")
+		{
+			GetComponent<HealthComponent>().TakeDamage(100);
+		}
+
 	}
 
 

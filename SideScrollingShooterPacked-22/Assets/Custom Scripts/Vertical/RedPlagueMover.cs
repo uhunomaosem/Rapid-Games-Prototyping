@@ -17,25 +17,26 @@ public class RedPlagueMover : MonoBehaviour
 	{
 		transform.position = new Vector2(origXPos + maxXOffset * Mathf.Sin(Time.time), transform.position.y  - (vSpeed * Time.deltaTime));
 	}
-	
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		//if (other.tag == "player")
-		//{
-		//    destroy(other.gameobject);
-		//}
 
-		//if (other.tag == "projectile")
-		//{
-		//    getcomponent<healthcomponent>().takedamage(20);
-		//}
-		GetComponent<HealthComponent>().TakeDamage(20);
-		if (GetComponent<HealthComponent>().health <= 0)
-		{
-			ScoreSystem.Instance.AddScore(10);
-		}
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        //if (other.tag == "player")
+        //{
+        //    destroy(other.gameobject);
+        //}
 
-	}
+        if (other.tag == "Projectile")
+        {
+            GetComponent<HealthComponent>().TakeDamage(20);
+        }
+
+        //GetComponent<HealthComponent>().TakeDamage(20);
+        if (GetComponent<HealthComponent>().health <= 0)
+        {
+            ScoreSystem.Instance.AddScore(10);
+        }
+
+    }
 
 
 }
