@@ -20,10 +20,10 @@ public class MeteorSpawner : MonoBehaviour
         time += Time.deltaTime;
         if (time > spawnRate)
         {
-            GameObject enemy = Instantiate(enemyToSpawn, transform.position, transform.rotation);
-            transform.Rotate(Vector3.right * -180);
-            enemy.GetComponent<MeteorMove>().vSpeed = Random.Range(0f, 0.1f);
-            enemy.GetComponent<MeteorMove>().maxXOffset = Random.Range(-8f, 8f);
+            GameObject enemy = Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
+            //transform.Rotate(Vector3.right * -180);
+            //enemy.GetComponent<MeteorMove>().vSpeed = Random.Range(0f, 0.1f);
+            enemy.GetComponent<MeteorMove>().maxXOffset = Random.Range(0, 10f);
 
 
             time = 0;
