@@ -27,13 +27,16 @@ public class HealthComponent : MonoBehaviour
         Debug.Log("YES 20!!!");
         if (health <= 0)
         {
-            health = 0;
-            if (tag == "Player")
+            if (gameObject != null)
             {
-                onPlayerDeath?.Invoke();
-            }
-            Destroy(gameObject);
+                health = 0;
+                if (tag == "Player")
+                {
+                    onPlayerDeath?.Invoke();
 
+                }
+                Destroy(gameObject);
+            }
 
         }
     }

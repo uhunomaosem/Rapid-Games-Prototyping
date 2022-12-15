@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class ScoreSystem : MonoBehaviour
@@ -32,5 +33,12 @@ public class ScoreSystem : MonoBehaviour
         scoreText.text = "Score: " + score;
     }
 
+    private void Update()
+    {
+        if (score >= 2000)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
 
 }
