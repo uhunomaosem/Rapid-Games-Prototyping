@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class ScoreSystem : MonoBehaviour
 {
 
     public static ScoreSystem Instance;
-    public Text scoreText;
+    public TMP_Text scoreText;
     public int score = 0;
 
 

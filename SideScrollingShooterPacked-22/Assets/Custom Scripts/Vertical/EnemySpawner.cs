@@ -13,8 +13,13 @@ public class EnemySpawner : MonoBehaviour
     private float time = 0;
     private int spawned = 0;
 
+    public PathCreation.PathCreator followPathPrefab;
+    private PathCreation.PathCreator path;
 
-
+    private void Start()
+    {
+        path = Instantiate(followPathPrefab, transform.position, Quaternion.identity);
+    }
 
     // Update is called once per frame
     void Update()
@@ -22,11 +27,11 @@ public class EnemySpawner : MonoBehaviour
         time += Time.deltaTime;
         if(time > spawnRate)
         {
-            GameObject enemy = Instantiate(enemyToSpawn, transform.position, transform.rotation);
-            transform.Rotate(Vector3.right * -180);
-            enemy.GetComponent<RedPlagueMover>().vSpeed = Random.Range(0.1f,2f);
-            enemy.GetComponent<RedPlagueMover>().maxXOffset = Random.Range(-8f, 8f);
-            
+            GameObject enemy = Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
+            //transform.Rotate(Vector3.right * -180);
+            enemy.GetComponent<PathCreation.Examples.PathFollower>().speed = Random.Range(0.1f, 1.5f);
+            enemy.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = path;
+
 
             time = 0;
             spawned++;

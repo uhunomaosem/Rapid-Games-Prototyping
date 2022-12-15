@@ -22,6 +22,7 @@ public class MeteorSpawner : MonoBehaviour
         {
             GameObject enemy = Instantiate(enemyToSpawn, transform.position, transform.rotation);
             transform.Rotate(Vector3.right * -180);
+            enemy.GetComponent<MeteorMove>().vSpeed = Random.Range(0f, 0.1f);
             enemy.GetComponent<MeteorMove>().maxXOffset = Random.Range(-8f, 8f);
 
 
