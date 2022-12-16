@@ -10,6 +10,7 @@ public class HealthComponent : MonoBehaviour
     public static Action onPlayerDeath;
 
     public float health;
+    const float maxHealth = 100;
     public Image healthBar;
     public bool hasHealthBar;
 
@@ -37,7 +38,7 @@ public class HealthComponent : MonoBehaviour
 
                 }
             }
-            if (tag != "Player")
+            if (tag == "Enemy")
             {
                 Destroy(gameObject);
 
@@ -55,6 +56,10 @@ public class HealthComponent : MonoBehaviour
     public void getHealth(float heal)
     {
         health += heal;
+        if (health > maxHealth)
+        {
+            health = 100;
+        }
     }
 
 

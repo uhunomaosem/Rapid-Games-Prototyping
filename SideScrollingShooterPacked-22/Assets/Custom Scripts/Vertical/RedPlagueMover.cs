@@ -27,7 +27,7 @@ public class RedPlagueMover : MonoBehaviour
 
         if (other.tag == "Projectile")
         {
-            GetComponent<HealthComponent>().takeDamage(100);
+            GetComponent<HealthComponent>().takeDamage(20);
         }
 
         //GetComponent<HealthComponent>().TakeDamage(20);

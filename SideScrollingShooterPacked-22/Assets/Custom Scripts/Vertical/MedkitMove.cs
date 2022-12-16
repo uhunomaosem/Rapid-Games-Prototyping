@@ -20,11 +20,12 @@ public class MedkitMove : MonoBehaviour
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
-	{
+    {
 		if (other.tag == "Player")
-		{
-			GetComponent<HealthComponent>().getHealth(20);
+        {
+			Destroy(gameObject);
+        }
+    }
 
-		}
-	}
+
 }

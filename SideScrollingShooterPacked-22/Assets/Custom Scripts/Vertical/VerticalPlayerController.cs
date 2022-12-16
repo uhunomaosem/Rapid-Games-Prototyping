@@ -85,7 +85,7 @@ public class VerticalPlayerController : MonoBehaviour
         {
 			if (gameObject.GetComponent<HealthComponent>() != null)
             {
-				gameObject.GetComponent<HealthComponent>().getHealth(20);
+				gameObject.GetComponent<HealthComponent>().getHealth(100);
 			}
 
 		}

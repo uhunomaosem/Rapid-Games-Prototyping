@@ -36,7 +36,7 @@ public class ScoreSystem : MonoBehaviour
 
     private void Update()
     {
-        if (score >= 2000)
+        if (score >= 1000)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

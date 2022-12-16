@@ -23,7 +23,7 @@ public class MedkitSpawner : MonoBehaviour
             GameObject enemy = Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
             //transform.Rotate(Vector3.right * -180);
             //enemy.GetComponent<MeteorMove>().vSpeed = Random.Range(0f, 0.1f);
-            enemy.GetComponent<MeteorMove>().maxXOffset = Random.Range(0, 10f);
+            enemy.GetComponent<MedkitMove>().maxXOffset = Random.Range(0, 10f);
 
 
             time = 0;
