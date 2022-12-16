@@ -20,7 +20,7 @@ public class MDProjectile : MonoBehaviour
 	{
 		if (other.tag == "Enemy")
 		{
-			GetComponent<HealthComponent>().TakeDamage(20);
+			GetComponent<HealthComponent>().getHealth(20);
 
 		}
 	}

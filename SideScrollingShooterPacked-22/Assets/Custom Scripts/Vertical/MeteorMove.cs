@@ -19,24 +19,24 @@ public class MeteorMove : MonoBehaviour
 		transform.position = new Vector2(origXPos + maxXOffset, transform.position.y - (vSpeed * Time.deltaTime));
 	}
 
-	//void OnTriggerEnter2D(Collider2D other)
-	//{
- //       if (other.tag == "player")
- //       {
- //           destroy(other.gameobject);
- //       }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        //if (other.tag == "player")
+        //{
+        //    Destroy(other.gameObject);
+        //}
 
- //       if (other.tag == "projectile")
- //       {
- //           getcomponent<healthcomponent>().takedamage(20);
- //       }
+        //if (other.tag == "projectile")
+        //{
+        //    getcomponent<healthcomponent>().takedamage(20);
+        //}
 
- //       GetComponent<HealthComponent>().TakeDamage(100);
+        //GetComponent<HealthComponent>().TakeDamage(100);
 
- //       if (GetComponent<HealthComponent>().health <= 0)
-	//	{
-	//		ScoreSystem.Instance.AddScore(10);
-	//	}
+        //if (GetComponent<HealthComponent>().health <= 0)
+        //{
+        //    ScoreSystem.Instance.AddScore(10);
+        //}
 
-	//}
+    }
 }

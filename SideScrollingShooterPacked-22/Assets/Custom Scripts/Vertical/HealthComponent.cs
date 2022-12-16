@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthComponent : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class HealthComponent : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public void takeDamage(float damage)
     {
         health -= damage;
         Debug.Log("YES 20!!!");
@@ -33,14 +34,29 @@ public class HealthComponent : MonoBehaviour
                 if (tag == "Player")
                 {
                     onPlayerDeath?.Invoke();
+                    //SceneManager.LoadScene("VerticalScroller");
 
                 }
+            }
+            if (tag != "Player")
+            {
                 Destroy(gameObject);
+
+                if (GetComponent<HealthComponent>().health <= 0)
+                {
+
+                    ScoreSystem scoresytem = FindObjectOfType<ScoreSystem>();
+                    scoresytem.AddScore(10);
+                }
             }
 
         }
     }
 
+    public void getHealth(float heal)
+    {
+        health += heal;
+    }
 
 
 }

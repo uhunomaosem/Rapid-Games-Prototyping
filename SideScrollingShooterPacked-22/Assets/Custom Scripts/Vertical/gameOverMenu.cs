@@ -10,6 +10,7 @@ public class gameOverMenu : MonoBehaviour
     private void Start()
     {
         gameOverScreen.SetActive(false);
+
     }
 
     private void OnEnable()
@@ -19,7 +20,7 @@ public class gameOverMenu : MonoBehaviour
 
     private void OnDisable()
     {
-        HealthComponent.onPlayerDeath += enableGameOverMenu;
+        HealthComponent.onPlayerDeath -= enableGameOverMenu;
     }
 
     public void enableGameOverMenu()

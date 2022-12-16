@@ -67,12 +67,18 @@ public class VerticalPlayerController : MonoBehaviour
 	{
 		if (other.tag == "Enemy")
         {
-			GetComponent<HealthComponent>().TakeDamage(20);
+            if (gameObject.GetComponent<HealthComponent>() != null)
+            {
+				gameObject.GetComponent<HealthComponent>().takeDamage(20);
+            }
 		}
 
 		if (other.tag == "Obstacle")
 		{
-			GetComponent<HealthComponent>().TakeDamage(100);
+            if (gameObject.GetComponent<HealthComponent>() != null)
+            {
+				gameObject.GetComponent<HealthComponent>().takeDamage(100);
+            }
 		}
 
 	}
