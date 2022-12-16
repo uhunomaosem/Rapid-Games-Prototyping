@@ -81,6 +81,15 @@ public class VerticalPlayerController : MonoBehaviour
             }
 		}
 
+		if (other.tag == "Medic")
+        {
+			if (gameObject.GetComponent<HealthComponent>() != null)
+            {
+				gameObject.GetComponent<HealthComponent>().getHealth(20);
+			}
+
+		}
+
 	}
 
 

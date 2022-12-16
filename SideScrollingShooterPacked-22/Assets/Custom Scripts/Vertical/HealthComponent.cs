@@ -34,7 +34,6 @@ public class HealthComponent : MonoBehaviour
                 if (tag == "Player")
                 {
                     onPlayerDeath?.Invoke();
-                    //SceneManager.LoadScene("VerticalScroller");
 
                 }
             }
