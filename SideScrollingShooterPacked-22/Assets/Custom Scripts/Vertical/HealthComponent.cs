@@ -14,6 +14,7 @@ public class HealthComponent : MonoBehaviour
     public Image healthBar;
     public bool hasHealthBar;
 
+    [SerializeField] AudioClip deathSound;
 
     private void Update()
     {
@@ -34,6 +35,7 @@ public class HealthComponent : MonoBehaviour
                 health = 0;
                 if (tag == "Player")
                 {
+                    SoundFXManager.instance.PlaySoundFX(deathSound, transform, 1f);
                     onPlayerDeath?.Invoke();
 
                 }

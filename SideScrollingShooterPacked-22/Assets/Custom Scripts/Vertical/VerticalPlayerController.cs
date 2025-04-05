@@ -17,8 +17,12 @@ public class VerticalPlayerController : MonoBehaviour
 	protected float fireTimer;	
 	
 	protected VerticalPushCamera cam;
-	
-	void Awake()
+
+
+	[SerializeField] private AudioClip fireSound;
+    [SerializeField] private AudioClip hurtSound;
+
+    void Awake()
 	{
 		cam = Camera.main.GetComponent<VerticalPushCamera>();
 		myRigidbody = GetComponent<Rigidbody2D>();
@@ -45,7 +49,9 @@ public class VerticalPlayerController : MonoBehaviour
 			Instantiate (projectile, firePoint1.position, transform.rotation);
 			Instantiate (projectile, firePoint2.position, transform.rotation);
 			firing = true;
-		}
+
+            SoundFXManager.instance.PlaySoundFX(fireSound, firePoint1, 1f);
+        }
 		
 		horizVelocity = Input.GetAxis("Horizontal");
 		vertVelocity = Input.GetAxis("Vertical");
@@ -69,7 +75,8 @@ public class VerticalPlayerController : MonoBehaviour
         {
             if (gameObject.GetComponent<HealthComponent>() != null)
             {
-				gameObject.GetComponent<HealthComponent>().takeDamage(20);
+				SoundFXManager.instance.PlaySoundFX(hurtSound, transform, 1f);
+                gameObject.GetComponent<HealthComponent>().takeDamage(20);
             }
 		}
 
